@@ -60,6 +60,9 @@ async function run() {
                haversine(lat, lon, lt, lng) <= 500;
       });
 
+      console.log("Total features:", geojson.features.length,
+        "after filter:", hits.length);
+
       for (const f of hits) {
         // list card
         const card = document.createElement("div");
