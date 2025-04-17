@@ -1,4 +1,21 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Verkkokauppa.com - Helsinki",
+        "website": "https://www.verkkokauppa.com/?utm_source=google&utm_medium=MyBusiness&utm_campaign=ProfileWebsiteLink_na_o_b2c+b2b_prosp_na&utm_content=Helsinki_link_button_na",
+        "headline": "Varaston tyhjäjäiset",
+        "discount": "Up to 50% off"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.920909899999998,
+          60.156083800000005
+        ]
+      }
+    }
+  ]
 }
