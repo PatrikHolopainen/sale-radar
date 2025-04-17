@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Sale Radar</title>
+
+  <!-- MapLibre GL -->
+  <link href="https://unpkg.com/maplibre-gl@3.4.0/dist/maplibre-gl.css" rel="stylesheet" />
+  <script src="https://unpkg.com/maplibre-gl@3.4.0/dist/maplibre-gl.js"></script>
+
+  <style>
+    body,html {margin:0;height:100%;}
+    #map      {height:60vh;}
+    #list     {padding:0 1rem;}
+    .card     {margin:1rem 0;padding:0.5rem;border:1px solid #ddd;border-radius:8px;}
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <section id="list"></section>
+
+  <script defer src="app.js"></script>
+</body>
+</html>

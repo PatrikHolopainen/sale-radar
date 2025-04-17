@@ -1,0 +1,15 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ACME Furnishings",
+        "sale": "moving‑out",
+        "headline": "Everything 70 % off!",
+        "ends": "2025‑05‑01"
+      },
+      "geometry": { "type": "Point", "coordinates": [24.941, 60.169] }
+    }
+  ]
+}
