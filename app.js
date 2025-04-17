@@ -62,8 +62,12 @@ async function run() {
         // list card
         const card = document.createElement("div");
         card.className = "card";
-        card.innerHTML = `<strong>${f.properties.name}</strong><br>
-                          ${f.properties.headline}`;
+        card.innerHTML = `
+          <strong>${f.properties.name}</strong><br>
+          ${f.properties.headline}<br>
+          <a href="${f.properties.website}" target="_blank" rel="noopener">
+            Website ↗
+          </a>`;
         document.getElementById("list").append(card);
 
         // map marker
@@ -71,7 +75,12 @@ async function run() {
           .setLngLat(f.geometry.coordinates)
           .setPopup(
             new maplibregl.Popup({ offset: 25 })
-              .setHTML(`<strong>${f.properties.name}</strong><br>${f.properties.headline}`))
+            .setHTML(`
+                 <strong>${f.properties.name}</strong><br>
+                 ${f.properties.headline}<br>
+                 <a href="${f.properties.website}" target="_blank" rel="noopener">
+                   Website ↗
+                 </a>`))
           .addTo(map);
       }
     });
