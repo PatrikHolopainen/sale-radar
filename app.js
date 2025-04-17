@@ -56,7 +56,7 @@ async function run(){
       .filter(f=>{
         const [lng,lt] = f.geometry.coordinates;
         return lt>latMin && lt<latMax && lng>lonMin && lng<lonMax &&
-               haversine(lat,lon,lt,lng)<=500
+               haversine(lat,lon,lt,lng)<=10000
       });
 
     for(const f of hits){
