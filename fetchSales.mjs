@@ -34,7 +34,7 @@ const client = new OpenAI({ apiKey: OPENAI_API_KEY });
 // Config – adjust freely
 // -----------------------------------------------------------------------------
 const center = { lat: 60.169168, lng: 24.930956 }; // Kamppi centre
-const radius = 500;   // metres
+const radius = 10000;   // metres
 const maxResults = 10;
 
 // Finnish + English sale words we care about (for the OpenAI prompt context)
