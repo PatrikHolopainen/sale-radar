@@ -56,8 +56,7 @@ async function run(){
       .filter(f=>{
         const [lng,lt] = f.geometry.coordinates;
         return lt>latMin && lt<latMax && lng>lonMin && lng<lonMax &&
-               haversine(lat,lon,lt,lng)<=500 &&
-               new Date(f.properties.ends) > Date.now();          // still valid
+               haversine(lat,lon,lt,lng)<=500
       });
 
     for(const f of hits){
