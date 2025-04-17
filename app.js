@@ -53,8 +53,7 @@ async function run() {
     // wait for tiles/style to load before adding sales
     map.on("load", () => {
       const { latMin, latMax, lonMin, lonMax } = boundingBox(lat, lon);
-      const hits = geojson.features
-      });
+      const hits = geojson.features;
 
       console.log("Total features:", geojson.features.length,
         "after filter:", hits.length);
