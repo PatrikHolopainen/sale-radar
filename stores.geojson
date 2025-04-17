@@ -1,18 +1,4 @@
 {
   "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Kamppi Centre – Pop‑up Clearance",
-        "sale": "moving‑out",
-        "headline": "Last week! 60 %‑90 % off everything",
-        "ends": "2025‑05‑15"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [24.933444, 60.169583]
-      }
-    }
-  ]
+  "features": []
 }

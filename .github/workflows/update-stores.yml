@@ -1,0 +1,53 @@
+# .github/workflows/update-stores.yml
+name: Rebuild stores.geojson weekly
+
+# ────────────────────────────────
+on:
+  # every Thursday at 03:00 UTC  (≈ 06:00 in Helsinki)
+  schedule:
+    - cron:  '0 3 * * 4'
+  # manual “Run workflow” button in the Actions tab
+  workflow_dispatch:
+
+# ────────────────────────────────
+permissions:
+  contents: write       # push the commit back to the repo
+  id-token: read        # allow npm auth if you ever add private packages
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+
+    env:                             # read from repo → Settings → Secrets
+      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+      OPENAI_API_KEY:  ${{ secrets.OPENAI_API_KEY }}
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install deps
+        run: |
+          npm ci --omit=dev          # package.json must list openai and dotenv
+
+      - name: Run fetchSales.mjs
+        run: node fetchSales.mjs
+
+      - name: Commit & push if file changed
+        run: |
+          git config user.name  "GitHub Actions"
+          git config user.email "actions@github.com"
+
+          # Only commit if stores.geojson actually changed
+          git add stores.geojson
+          if ! git diff --cached --quiet; then
+            git commit -m "auto: update stores.geojson ($(date -u +'%F'))"
+            git push
+          else
+            echo "No changes – skip commit."
+          fi
