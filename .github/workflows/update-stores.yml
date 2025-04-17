@@ -11,8 +11,7 @@ on:
 
 # ────────────────────────────────
 permissions:
-  contents: write       # push the commit back to the repo
-  id-token: read        # allow npm auth if you ever add private packages
+  contents: write
 
 jobs:
   rebuild:
