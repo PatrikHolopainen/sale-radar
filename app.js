@@ -23,11 +23,28 @@ async function run(){
 
     // map -------------------------------------------------------------------
     const map = new maplibregl.Map({
-      container:"map",
-      style:"https://demotiles.maplibre.org/style.json",
-      center:[lon,lat],
-      zoom:15
-    });
+  container: "map",
+  style: {
+    "version": 8,
+    "sources": {
+      "osm": {
+        "type": "raster",
+        "tiles": [
+          "https://a.tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "https://b.tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "https://c.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        ],
+        "tileSize": 256,
+        "attribution": "© OpenStreetMap contributors"
+      }
+    },
+    "layers": [
+      { "id": "osm", "type": "raster", "source": "osm" }
+    ]
+  },
+  center: [lon, lat],
+  zoom: 15
+});
     new maplibregl.Marker({color:"#385"})
       .setLngLat([lon,lat])
       .setPopup(new maplibregl.Popup().setText("You are here"))
