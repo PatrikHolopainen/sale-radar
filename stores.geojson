@@ -1,15 +1,22 @@
 {
   "type": "FeatureCollection",
   "features": [
+
+    /* ‑‑‑ sample liquidation sale (Helsinki, Kamppi Centre) ‑‑‑ */
     {
       "type": "Feature",
       "properties": {
-        "name": "ACME Furnishings",
+        "name": "Kamppi Centre – Pop‑up Clearance",
         "sale": "moving‑out",
-        "headline": "Everything 70 % off!",
-        "ends": "2025‑05‑01"
+        "headline": "Last week! 60 %‑90 % off everything",
+        "ends": "2025‑05‑15"
       },
-      "geometry": { "type": "Point", "coordinates": [24.941, 60.169] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.933444, 60.169583]   /*  Kamppi  */
+      }
     }
+
+    /* you can keep (or delete) the ACME Furnishings demo block … */
   ]
 }
