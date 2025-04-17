@@ -1,58 +1,76 @@
 #!/usr/bin/env node
 /**
-  fetchSales.mjs – Build stores.geojson with sale details for map pop‑ups
+  fetchSales.mjs – Multi‑point crawler
   -----------------------------------------------------------------------------
-  • Uses Google Places Nearby Search to get stores near Kamppi (Helsinki).
-  • For each store that has a website, asks OpenAI (web_search_preview) to:
-        1. Decide if the site advertises a big sale.
-        2. Extract a short headline / discount snippet.
-  • Outputs stores.geojson with extra properties so the front‑end can show
-    marker pop‑ups like: "UFF Vintage – Up to 70 % off (loppuunmyynti)".
+  • Accepts an array of coordinate pairs (10 in this demo).
+  • For **each point**: Google Places Nearby Search (radius 200 m, max 20 stores).
+  • De‑duplicates the combined result set by Google `id` (place ID).
+  • Sends unique sites to OpenAI (web_search_preview) to decide whether a
+    clearance / major sale is advertised and extracts a headline/discount.
+  • Writes a single stores.geojson containing every store flagged with a sale.
+  • Logs: #locations queried, total stores returned, unique stores scanned,
+    and final #sales written.
 
   -----------------------------------------------------------------------------
-  .env variables (loaded with dotenv):
-      GOOGLE_API_KEY   – Google Places key
-      OPENAI_API_KEY   – OpenAI key (gpt‑4.1 with web_search_preview)
+  ENV (.env + dotenv)
+  -----------------------------------------------------------------------------
+  GOOGLE_API_KEY   – Google Places key
+  OPENAI_API_KEY   – OpenAI key (gpt‑4.1)
 
-  npm install openai dotenv          # (node-fetch if Node < 18)
+  npm i openai dotenv           # (node-fetch if < Node 18)
 */
 
 import 'dotenv/config';
 import fs from 'fs/promises';
 import OpenAI from 'openai';
-// If using Node 16–17, uncomment:
+// For Node < 18 uncomment:
 // import fetch from 'node-fetch';
 
 const { GOOGLE_API_KEY, OPENAI_API_KEY } = process.env;
-if (!GOOGLE_API_KEY || !OPENAI_API_KEY) {
-  throw new Error('GOOGLE_API_KEY and OPENAI_API_KEY must be set in .env');
-}
+if (!GOOGLE_API_KEY || !OPENAI_API_KEY) throw new Error('Missing API keys in .env');
 
 const client = new OpenAI({ apiKey: OPENAI_API_KEY });
 
 // -----------------------------------------------------------------------------
-// Config – adjust freely
+// CONFIG – tweak here
 // -----------------------------------------------------------------------------
-const center = { lat: 60.169168, lng: 24.930956 }; // Kamppi centre
-const radius = 10000;   // metres
-const maxResults = 10;
 
-// Finnish + English sale words we care about (for the OpenAI prompt context)
-const KW = ['loppuunmyynti', 'kevätale', 'tyhjennysmyynti', 'alennus', 'ale',
-            'clearance', '% off', 'sale'];
+const INCLUDED_TYPES = [
+  'bicycle_store', 'book_store', 'cell_phone_store',
+  'clothing_store', 'department_store', 'discount_store', 'electronics_store',
+  'furniture_store', 'gift_shop', 'hardware_store', 'home_goods_store',
+  'home_improvement_store', 'jewelry_store', 'shoe_store', 'shopping_mall',
+  'sporting_goods_store'
+];
+
+const LOCATIONS = [                    // <- replace with your 10 coordinate pairs
+  { lat: 60.169168, lng: 24.930956 },  // Kamppi
+  { lat: 60.168984, lng: 24.938293 },
+  { lat: 60.169759, lng: 24.944180 },
+  { lat: 60.167177, lng: 24.945747 },
+  { lat: 60.162641, lng: 24.939496 },
+  { lat: 60.156900, lng: 24.919279 },
+  { lat: 60.160070, lng: 24.880104 },
+  { lat: 60.187699, lng: 24.979896 },
+  { lat: 60.198076, lng: 24.930052 },
+  { lat: 60.181829, lng: 24.950918 }
+];
+
+const RADIUS       = 300;   // metres
+const MAX_RESULTS  = 20;    // per Google query
+
+const KW = [ 'loppuunmyynti', 'kevätale', 'tyhjennysmyynti', 'alennus', 'ale',
+             'clearance', '% off', 'sale' ];
 
 // -----------------------------------------------------------------------------
-// Google Places Nearby Search helper
+// Google Places Nearby Search for one coordinate
 // -----------------------------------------------------------------------------
-async function queryPlaces() {
+async function queryPlaces({ lat, lng }) {
   const body = {
-    includedTypes: ['store'],
-    maxResultCount: maxResults,
+    includedTypes: INCLUDED_TYPES,
+    maxResultCount: MAX_RESULTS,
     locationRestriction: {
-      circle: {
-        center: { latitude: center.lat, longitude: center.lng },
-        radius
-      }
+      circle: { center: { latitude: lat, longitude: lng }, radius: RADIUS }
     }
   };
 
@@ -61,7 +79,7 @@ async function queryPlaces() {
     headers: {
       'Content-Type': 'application/json',
       'X-Goog-Api-Key': GOOGLE_API_KEY,
-      'X-Goog-FieldMask': 'places.location,places.displayName,places.websiteUri'
+      'X-Goog-FieldMask': 'places.id,places.location,places.displayName,places.websiteUri'
     },
     body: JSON.stringify(body)
   });
@@ -70,40 +88,43 @@ async function queryPlaces() {
 }
 
 // -----------------------------------------------------------------------------
-// Ask OpenAI to analyse the page and return JSON about the sale
+// Analyse a site with OpenAI – returns {sale, headline?, discount?}
 // -----------------------------------------------------------------------------
 async function analyzeSite(url) {
-  const prompt = `Visit the page at ${url}. ` +
-    `If the page clearly advertises a store‑wide sale or clearance (Finnish words: ${KW.join(', ')}, or English words: clearance, sale, % off), return JSON like:\n` +
-    `{"sale":true,"headline":"Loppuunmyynti – kaikki -70%","discount":"70%"}. ` +
-    `If there is no such sale, return {"sale":false}. ` +
-    `Return ONLY the JSON, no extra text.`;
-
-  const resp = await client.responses.create({
+  const prompt = `Visit ${url}. If it clearly advertises a store‑wide sale or clearance (Finnish: ${KW.slice(0,5).join(', ')}, English: clearance, % off), return JSON like {"sale":true,"headline":"-70% loppuunmyynti","discount":"70%"}. Otherwise {"sale":false}. Return ONLY JSON.`;
+  const resp   = await client.responses.create({
     model: 'gpt-4.1',
     tools: [{ type: 'web_search_preview' }],
     input: prompt
   });
-
-  // The model should comply; be defensive anyway
-  const txt = resp.output_text.trim();
-  try {
-    return JSON.parse(txt);
-  } catch (err) {
-    console.warn('⚠️  Non‑JSON from OpenAI, ignoring:', txt.slice(0,80));
-    return { sale: false };
-  }
+  try { return JSON.parse(resp.output_text.trim()); }
+  catch { return { sale: false }; }
 }
 
 // -----------------------------------------------------------------------------
-// MAIN
+// MAIN FLOW
 // -----------------------------------------------------------------------------
 (async () => {
-  const places = await queryPlaces();
-  const features = [];
+  console.log(`Querying ${LOCATIONS.length} locations × ${MAX_RESULTS} results, radius ${RADIUS} m…`);
 
-  for (const p of places) {
-    if (!p.websiteUri) continue;
+  let rawCount = 0;
+  const byId = new Map();   // id -> place object (dedup)
+
+  // 1. Collect & deduplicate --------------------------------------------------
+  for (const loc of LOCATIONS) {
+    const places = await queryPlaces(loc);
+    rawCount += places.length;
+    for (const p of places) {
+      if (p.id && !byId.has(p.id)) byId.set(p.id, p);
+    }
+  }
+
+  console.log(`Google returned ${rawCount} places; ${byId.size} unique with websites.`);
+
+  // 2. Analyse each unique store ---------------------------------------------
+  const features = [];
+  for (const p of byId.values()) {
+    if (!p.websiteUri) continue;              // nothing to check
     const name = p.displayName?.text || '(unnamed)';
     process.stdout.write(`${name.padEnd(35)} → `);
 
@@ -132,7 +153,7 @@ async function analyzeSite(url) {
     }
   }
 
-  const geojson = { type: 'FeatureCollection', features };
-  await fs.writeFile('stores.geojson', JSON.stringify(geojson, null, 2));
-  console.log(`\nWrote ${features.length} sale(s) to stores.geojson`);
+  // 3. Write GeoJSON ----------------------------------------------------------
+  await fs.writeFile('stores.geojson', JSON.stringify({ type: 'FeatureCollection', features }, null, 2));
+  console.log(`\nSaved ${features.length} sale(s) to stores.geojson`);
 })();
