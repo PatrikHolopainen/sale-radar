@@ -20,10 +20,26 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "KICKS",
+        "website": "https://www.kicks.fi/",
+        "headline": "ALE -50%",
+        "discount": "50%"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.934269999999998,
+          60.16967
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name": "Mango",
         "website": "https://shop.mango.com/fi?utm_source=google&utm_medium=organic&utm_campaign=googlemaps",
-        "headline": "SALEUP TO 50% OFF",
-        "discount": "50%"
+        "headline": "SALE UP TO 70% OFF",
+        "discount": "70%"
       },
       "geometry": {
         "type": "Point",
@@ -38,7 +54,7 @@
       "properties": {
         "name": "ECCO Kamppi Helsinki",
         "website": "https://fi.ecco.com/fi-FI/?utm_source=yext&utm_medium=extnet&utm_campaign=1034359",
-        "headline": "Aletuotteet",
+        "headline": "ECCOn ale on täällä",
         "discount": "70%"
       },
       "geometry": {
@@ -68,80 +84,16 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Gigantti",
-        "website": "https://www.gigantti.fi/",
-        "headline": "Varastontyhjennys",
-        "discount": "Varastontyhjennys"
+        "name": "Lilja the Label",
+        "website": "http://www.liljathelabel.com/",
+        "headline": "PRE-ORDER | -10%",
+        "discount": "10%"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.938227599999998,
-          60.1692534
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Flying Tiger Copenhagen",
-        "website": "https://flyingtiger.com/pages/store-locator?utm_source=Google&utm_medium=Store+Locator+Traffic&utm_campaign=Uberall&utm_id=Uberall#!/l/fi/helsinki/kaivokatu-8/fi01020",
-        "headline": "Jopa -50% alennus",
-        "discount": "50%"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.9412904,
-          60.169811
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "ARKET Store",
-        "website": "https://www.arket.com/",
-        "headline": "Linen Collection 20% Off",
-        "discount": "20%"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.945947999999998,
-          60.168804
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Eurokangas Helsinki Keskusta",
-        "website": "http://www.eurokangas.fi/",
-        "headline": "ALE jopa -70%",
-        "discount": "70%"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.9473438,
-          60.16991659999999
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "My Favorite Things",
-        "website": "http://www.myfavoritethings.fi/",
-        "headline": "SALE",
-        "discount": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.93894,
-          60.1631436
+          24.939857999999997,
+          60.1624341
         ]
       }
     },
@@ -164,10 +116,26 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Verkkokauppa.com - Helsinki",
+        "website": "https://www.verkkokauppa.com/?utm_source=google&utm_medium=MyBusiness&utm_campaign=ProfileWebsiteLink_na_o_b2c+b2b_prosp_na&utm_content=Helsinki_link_button_na",
+        "headline": "Jopa -50% alennus",
+        "discount": "50%"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.920909899999998,
+          60.156083800000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name": "Apple Shop",
         "website": "https://www.verkkokauppa.com/",
-        "headline": "Poistoerät – viimeisiä viedään, hävityshintaan",
-        "discount": "Hävityshintaan"
+        "headline": "Ale jopa 40%",
+        "discount": "40%"
       },
       "geometry": {
         "type": "Point",
@@ -182,8 +150,8 @@
       "properties": {
         "name": "Cell Phone Sales (Verkkokauppa.com)",
         "website": "https://www.verkkokauppa.com/",
-        "headline": "Poistoeriä hävityshintaan",
-        "discount": "Jopa 50%"
+        "headline": "Jopa -50% alennus",
+        "discount": "50%"
       },
       "geometry": {
         "type": "Point",
@@ -198,8 +166,8 @@
       "properties": {
         "name": "Yokokauppa",
         "website": "http://yokokauppa.fi/",
-        "headline": "Hiihtovaatteet kevätladuille -30%",
-        "discount": "30%"
+        "headline": "Hiihtovaatteet inventoiduilla hinnoilla",
+        "discount": "67%"
       },
       "geometry": {
         "type": "Point",
@@ -214,7 +182,7 @@
       "properties": {
         "name": "Sony shop-in-shop",
         "website": "https://www.verkkokauppa.com/",
-        "headline": "Tarjoukset jopa -50%",
+        "headline": "Outlet – Poistoerät jopa -50%",
         "discount": "50%"
       },
       "geometry": {
@@ -231,22 +199,6 @@
         "name": "Suomen Pelitietokoneet OY",
         "website": "https://pelitietokoneet.fi/",
         "headline": "Tarjous!",
-        "discount": "€46"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.9212411,
-          60.156215800000005
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "https://pelitietokoneet.fi/",
-        "website": "https://pelitietokoneet.fi/",
-        "headline": "TARJOUS!",
         "discount": "15%"
       },
       "geometry": {
@@ -276,25 +228,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Gigantti",
-        "website": "https://www.gigantti.fi/",
-        "headline": "Varastontyhjennys",
-        "discount": "Jopa 50%"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.97776,
-          60.186595700000005
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Kappahl",
         "website": "https://www.kappahl.com/",
-        "headline": "-70% alennus",
+        "headline": "Jopa 70% alennus",
         "discount": "70%"
       },
       "geometry": {
@@ -308,16 +244,16 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "sinsay",
-        "website": "https://www.sinsay.com/",
-        "headline": "-20% Ultimi Pezzi",
-        "discount": "20%"
+        "name": "Mall of Tripla",
+        "website": "http://malloftripla.fi/",
+        "headline": "VARASTON MUUTTOMYYNTI Tuotteita jopa -60%",
+        "discount": "60%"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.9311598,
-          60.198045799999996
+          24.929815899999998,
+          60.198239599999994
         ]
       }
     },
@@ -326,8 +262,8 @@
       "properties": {
         "name": "Reserved",
         "website": "https://www.reserved.com/fi/fi/",
-        "headline": "VAIN VERKOSSA: Ylimääräinen 20% alennus alennetuista tuotteista",
-        "discount": "20%"
+        "headline": "Kesätarjous: -30% valituista tuotteista. Vain verkossa.",
+        "discount": "30%"
       },
       "geometry": {
         "type": "Point",
@@ -340,26 +276,10 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Telia Kauppa",
-        "website": "https://www.telia.fi/",
-        "headline": "Luurinmetsästys on taas täällä",
-        "discount": "50%"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.9308227,
-          60.198187999999995
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Vivokauppa Helsinki",
         "website": "http://www.vivokauppa.fi/",
-        "headline": "ALE",
-        "discount": "25%"
+        "headline": "-70% loppuunmyynti",
+        "discount": "70%"
       },
       "geometry": {
         "type": "Point",
@@ -372,16 +292,16 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Kallion Retro & Vintage Audio",
-        "website": "http://www.kallionretro.kotisivukone.com/",
-        "headline": "LP-levyt 30% ale!",
-        "discount": "30%"
+        "name": "Streetbeat",
+        "website": "http://www.streetbeat.fi/",
+        "headline": "OUTLET -40 - 70%",
+        "discount": "70%"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.947943199999997,
-          60.1840111
+          24.9526552,
+          60.18270159999999
         ]
       }
     }
