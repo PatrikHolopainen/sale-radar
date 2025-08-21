@@ -6,8 +6,8 @@
       "properties": {
         "name": "Kamppi Helsinki",
         "website": "https://www.kamppihelsinki.fi/",
-        "headline": "KESÄALE",
-        "discount": "up to 50%"
+        "headline": "Alen loppurysäys -70%",
+        "discount": "70%"
       },
       "geometry": {
         "type": "Point",
@@ -20,32 +20,16 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Marimekko Kamppi",
-        "website": "http://www.marimekko.com/",
-        "headline": "Up to 50% off",
-        "discount": "50%"
+        "name": "Fotoyks",
+        "website": "https://www.fotoyks.fi/",
+        "headline": "Nämä tuoteryhmät alennuksessa elokuun loppuun saakka!",
+        "discount": "20%"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.933584,
-          60.168969999999995
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "MEB Kamppi - Printit Helposti & Nopeasti",
-        "website": "https://www.meb.fi/",
-        "headline": "-10% Ale rekisteröityneille asiakkaille",
-        "discount": "10%"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.9309162,
-          60.168211
+          24.9329394,
+          60.167377599999995
         ]
       }
     },
@@ -55,7 +39,7 @@
         "name": "Stadium Kamppi",
         "website": "http://www.stadium.fi/",
         "headline": "Kesäalen loppukiri",
-        "discount": "25%"
+        "discount": "jopa 50%"
       },
       "geometry": {
         "type": "Point",
@@ -84,48 +68,80 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Forum",
-        "website": "https://www.forum.fi/",
-        "headline": "LOPPUUNMYYNTI",
-        "discount": "jopa -60%"
+        "name": "Mango",
+        "website": "https://shop.mango.com/fi?utm_source=google&utm_medium=organic&utm_campaign=googlemaps",
+        "headline": "SALE UP TO 70% OFF",
+        "discount": "70%"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.9381938,
-          60.1687904
+          24.9341218,
+          60.1693018
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Moomin Shop Lasipalatsi",
-        "website": "https://www.moomin.com/",
-        "headline": "End of the Year SALE 2024",
+        "name": "Gigantti",
+        "website": "https://www.gigantti.fi/",
+        "headline": "SÄÄSTÄ SUPERDIILEILLÄ!",
         "discount": "Varies"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.9370078,
-          60.1698733
+          24.938227599999998,
+          60.1692534
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "ARKET Store",
-        "website": "https://www.arket.com/",
-        "headline": "Seasonal sale – Women's shirts and blouses",
-        "discount": "Up to 60%"
+        "name": "Fantasiapelit",
+        "website": "http://www.fantasiapelit.com/",
+        "headline": "Kuukauden poistomyynti",
+        "discount": "Varastontyhjennys"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.945947999999998,
-          60.168804
+          24.941241100000003,
+          60.169994900000006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Relove Second hand & Café Stockmann Helsinki",
+        "website": "https://www.relove.fi/",
+        "headline": "ALE",
+        "discount": "20%"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.942317799999998,
+          60.16774890000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "XXL Sports & Outdoor Kluuvi",
+        "website": "https://www.xxl.fi/",
+        "headline": "-55% Helsport Varanger 8-10 Camp Lavvo",
+        "discount": "55%"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9482108,
+          60.1691462
         ]
       }
     },
@@ -134,7 +150,7 @@
       "properties": {
         "name": "Eurokangas Helsinki Keskusta",
         "website": "http://www.eurokangas.fi/",
-        "headline": "Ale on nyt täällä! Kankaita jopa -50%",
+        "headline": "ALE – Ale on nyt täällä! Kankaita jopa -50%",
         "discount": "50%"
       },
       "geometry": {
@@ -150,7 +166,7 @@
       "properties": {
         "name": "Iittala & Arabia Store Esplanadi",
         "website": "https://www.iittala.com/fi-fi?utm_source=google&utm_medium=organic&utm_campaign=google-business-profile&utm_term=1061",
-        "headline": "Poistuvat tuotteet jopa -50 %",
+        "headline": "Vielä ehdit: Poistuvat tuotteet jopa -50 %",
         "discount": "50%"
       },
       "geometry": {
@@ -164,32 +180,48 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "My Favorite Things",
-        "website": "http://www.myfavoritethings.fi/",
-        "headline": "END OF SUMMER SALE! ALL SALE ITEMS -50..-60%",
-        "discount": "50-60%"
+        "name": "Relove Freda",
+        "website": "http://relove.fi/",
+        "headline": "ALE",
+        "discount": "up to 20%"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.93894,
-          60.1631436
+          24.939857999999997,
+          60.1624341
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "VIMMA",
-        "website": "http://www.vimmacompany.com/",
-        "headline": "Lastenvaatteet 10€",
-        "discount": "10€"
+        "name": "Scandinavian Photo",
+        "website": "https://www.scandinavianphoto.fi/",
+        "headline": "Säästä 150 eur",
+        "discount": "150 eur"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.9397374,
-          60.1622726
+          24.9401281,
+          60.1639757
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "My Favorite Things",
+        "website": "http://www.myfavoritethings.fi/",
+        "headline": "END OF SUMMER SALE! ALL SALE ITEMS -50..-60%",
+        "discount": "50..60%"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.93894,
+          60.1631436
         ]
       }
     },
@@ -214,8 +246,8 @@
       "properties": {
         "name": "Verkkokauppa.com - Helsinki",
         "website": "https://www.verkkokauppa.com/?utm_source=google&utm_medium=MyBusiness&utm_campaign=ProfileWebsiteLink_na_o_b2c+b2b_prosp_na&utm_content=Helsinki_link_button_na",
-        "headline": "Varaston tyhjäjäiset",
-        "discount": "Hävityshintaan"
+        "headline": "Paluu arkeen ALE jopa -50 %",
+        "discount": "50%"
       },
       "geometry": {
         "type": "Point",
@@ -230,8 +262,8 @@
       "properties": {
         "name": "Apple Shop",
         "website": "https://www.verkkokauppa.com/",
-        "headline": "Varaston tyhjäjäiset",
-        "discount": "Hävityshintaan"
+        "headline": "Paluu arkeen ALE jopa -50 %",
+        "discount": "50%"
       },
       "geometry": {
         "type": "Point",
@@ -246,8 +278,8 @@
       "properties": {
         "name": "Cell Phone Sales (Verkkokauppa.com)",
         "website": "https://www.verkkokauppa.com/",
-        "headline": "Varaston tyhjäjäiset",
-        "discount": "Hävityshintaan"
+        "headline": "Tyhjennämme varastoa – Ale jopa -50 %",
+        "discount": "50%"
       },
       "geometry": {
         "type": "Point",
@@ -262,8 +294,8 @@
       "properties": {
         "name": "Sony shop-in-shop",
         "website": "https://www.verkkokauppa.com/",
-        "headline": "Varaston tyhjäjäiset",
-        "discount": "Jopa 50%"
+        "headline": "Elämä arkikuntoon – jopa 50 % alennus",
+        "discount": "50%"
       },
       "geometry": {
         "type": "Point",
@@ -276,25 +308,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "https://pelitietokoneet.fi/",
-        "website": "https://pelitietokoneet.fi/",
-        "headline": "Special Offers Sale",
-        "discount": "Up to 10%"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.9212411,
-          60.156215800000005
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Unelmakoti shop Lauttis",
         "website": "http://www.unelmakotishop.fi/",
-        "headline": "VARASTON TYHJENNYS -KAMPANJA -50% (Koodi: Varastontyhjennys50)",
+        "headline": "VARASTON TYHJENNYS -KAMPANJA -50%",
         "discount": "50%"
       },
       "geometry": {
@@ -326,8 +342,8 @@
       "properties": {
         "name": "Gigantti",
         "website": "https://www.gigantti.fi/",
-        "headline": "Varastontyhjennys",
-        "discount": "30%"
+        "headline": "SÄÄSTÄ SUPERDIILEILLÄ!",
+        "discount": "Varies"
       },
       "geometry": {
         "type": "Point",
@@ -356,10 +372,26 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Mall of Tripla",
+        "name": "Juhlamaailma Redi, Helsinki",
+        "website": "http://www.juhlamaailma.fi/",
+        "headline": "HURJA KESÄALE! Näkyvillä olevista hinnoista saat vielä -30% lisäalennuksen!",
+        "discount": "30%"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.978923599999998,
+          60.1877556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mall of Tripla Vallikallio",
         "website": "http://malloftripla.fi/",
-        "headline": "GRANIT ALE -50% & LISÄALE: OSTA 3, MAKSA 2",
-        "discount": "50%"
+        "headline": "Jopa -70% alennuksia",
+        "discount": "70%"
       },
       "geometry": {
         "type": "Point",
@@ -374,8 +406,8 @@
       "properties": {
         "name": "Reserved",
         "website": "https://www.reserved.com/fi/fi/",
-        "headline": "ALE JOPA -70%",
-        "discount": "70%"
+        "headline": "ALE JOPA -50%",
+        "discount": "50%"
       },
       "geometry": {
         "type": "Point",
@@ -390,8 +422,8 @@
       "properties": {
         "name": "Telia Kauppa",
         "website": "https://www.telia.fi/",
-        "headline": "Luurinmetsästys on palannut",
-        "discount": "Tarjousviidakossa rapisee! Saalista huipputarjoukset laitteista nyt – jopa 3 vuoden korottomalla ja kuluttomalla maksuajalla."
+        "headline": "Kesäale on käynnissä! Nappaa laitteet roimin alehinnoin.",
+        "discount": "70%"
       },
       "geometry": {
         "type": "Point",
@@ -404,10 +436,26 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Cropp",
+        "website": "https://www.cropp.com/",
+        "headline": "Wyprzedaż do -70%",
+        "discount": "70%"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.931518099999998,
+          60.198474399999995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name": "KICKS",
         "website": "https://www.kicks.fi/",
-        "headline": "Säästät 50%",
-        "discount": "50%"
+        "headline": "Meikit* −25%!",
+        "discount": "25%"
       },
       "geometry": {
         "type": "Point",
@@ -436,6 +484,22 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Vivokauppa Helsinki",
+        "website": "http://www.vivokauppa.fi/",
+        "headline": "ALE",
+        "discount": "up to 51%"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9535491,
+          60.18137229999999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name": "Streetbeat",
         "website": "http://www.streetbeat.fi/",
         "headline": "OUTLET -40 - 70%",
@@ -446,6 +510,38 @@
         "coordinates": [
           24.9526552,
           60.18270159999999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Euronics Hyvät Merkit",
+        "website": "http://euronics.fi/",
+        "headline": "ALE -31%",
+        "discount": "31%"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.953878399999997,
+          60.1814917
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Etola Hakaniemi",
+        "website": "http://www.etola.net/",
+        "headline": "-45% Torkkupeitto vohveli beige",
+        "discount": "45%"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.952417900000004,
+          60.1799666
         ]
       }
     },
